@@ -5,16 +5,20 @@ import { Counter } from 'k6/metrics';
 export const requests = new Counter('http_reqs');
 // you can specify stages of your test (ramp up/down patterns) through the options object
 // target is the number of VUs you are aiming for
+var counts = __ENV.K6_TARGET_COUNTS.toString()
+var time = __ENV.K6_TARGET_TIME.toString()
+var endpoint = __ENV.K6_TARGET_ENDPOINT.toString()
+
 export const options = {
   stages: [
-    { target: 10000, duration: '1m' },
+    { target: counts, duration: time },
   ],
   thresholds: {
     requests: ['count < 100'],
   },
 };
 export default function () {
-  const res = http.post({__ENV.K6_TARGET_ENDPOINT},
+  const res = http.post(endpoint,
     JSON.stringify({
         "name": "login_total",
         "value": 1.0,
