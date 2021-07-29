@@ -14,9 +14,7 @@ export const options = {
   },
 };
 export default function () {
-  // our HTTP request, note that we are saving the response to res, which can be accessed later
-  // const res = http.post('https://metric-gateway-dev-metric-gateway.apps.ocp.ar.bsch/metrics',
-  const res = http.post("https://<--INSERT URL-->/",
+  const res = http.post({__ENV.K6_TARGET_ENDPOINT},
     JSON.stringify({
         "name": "login_total",
         "value": 1.0,
