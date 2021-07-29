@@ -11,5 +11,4 @@ RUN chmod +x k6.sh
 
 USER 12345
 
-# ENTRYPOINT [ "/bin/sh", "-c", "/home/k6/k6.sh" ]
-ENTRYPOINT [ "/bin/sh", "-c", "sleep 3600" ]
+ENTRYPOINT [ "/bin/sh", "-c", "/home/k6/k6.sh" ]
