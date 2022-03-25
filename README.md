@@ -7,3 +7,6 @@ On the `Dockerfile` you can change the enviroments to specify the kind of test s
 
 ## Build 
 ./build.sh
+
+## Docker image 
+`quay.io/agustinlare/k6` 
