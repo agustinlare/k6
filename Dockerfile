@@ -1,7 +1,7 @@
 FROM ubuntu:latest
 
 ENV WORKDIR="/k6"
-ENV K6_TARGET_ENDPOINT="https://dummy.qa.clave.cloud/health"
+ENV K6_TARGET_ENDPOINT="https://google.com"
 ENV K6_TARGET_COUNTS=1000
 ENV K6_TARGET_TIME="1m"
 
